@@ -12,13 +12,13 @@ public class B1343 {
         StringTokenizer st = new StringTokenizer(board, ".");
         StringTokenizer st2 = new StringTokenizer(board, "X");
 
-        if(board.charAt(0) == '.'){
+        if(board.charAt(0) == '.'){     // .이 먼저 입력된 경우
             sb.append(st2.nextToken());
         }
         while (st.hasMoreTokens()) {
             String str = st.nextToken();
             int len = str.length();
-            if (str.length() % 2 != 0) {
+            if (str.length() % 2 != 0) {    //홀수일경우 -1 출력후 종료
                 System.out.println("-1");
                 System.exit(0);
                 break;
@@ -38,8 +38,6 @@ public class B1343 {
             sb.append(st2.nextToken());
             }
         }
-//        sb.deleteCharAt(sb.length()-1);
         System.out.println(sb);
-
     }
 }
