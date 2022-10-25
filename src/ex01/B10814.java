@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
 public class B10814 {
@@ -20,13 +21,16 @@ public class B10814 {
             }
         }
 
-        Arrays.sort(arr);
-        for(int i=0;i<num;i++){
-            for(int j=0;j<2;j++){
-                sb.append(arr[i][j]);
-                if(j==0) sb.append(" ");
-                else sb.append("\n");
+        Arrays.sort(arr, new Comparator<String[]>() {
+            @Override
+            public int compare(String[] o1, String[] o2) {
+                return Integer.parseInt(o1[0]) - Integer.parseInt(o2[0]);
             }
+        });
+
+        for(int i=0;i<num;i++){
+            sb.append(arr[i][0]).append(' ').append(arr[i][1]).append("\n");
         }
+        System.out.println(sb);
     }
 }
