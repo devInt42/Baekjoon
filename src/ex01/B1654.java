@@ -3,6 +3,7 @@ package ex01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class B1654 {
@@ -10,37 +11,31 @@ public class B1654 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int K = Integer.parseInt(st.nextToken());
-        int N = Integer.parseInt(st.nextToken());
-        int[] arr = new int[N];
-        int cnt = 0, res = 0, sum = 0;
-        for (int i = 0; i < N; i++) {
+        long N = Integer.parseInt(st.nextToken());
+        long[] arr = new long[K];
+        long top = 0;
+        long bot = 1;
+        long mid = 0;
+
+        for (int i = 0; i < K; i++) {
             arr[i] = Integer.parseInt(br.readLine());
+            top = Math.max(top, arr[i]);
         }
 
-        int num = 1000;
-        boolean flag = false;
-        while (true) {
-            sum = 0;
-            for (int i = 0; i < N; i++) {
-                sum += arr[i] / num;
+
+        while (top >= bot) {
+            long cnt = 0;
+            mid = (top + bot) / 2;
+
+            for (int i = 0; i < K; i++) {
+                cnt += arr[i] / mid;
             }
-            if (sum < N) {
-                if (!flag) {
-                    num /= 10;
-                    continue;
-                } else {
-
-                }
-
+            if (cnt >= N) {
+                bot = mid + 1;
+            } else {
+                top = mid - 1;
             }
-            else {
-                flag = true;
-
-                res=num;
-            }
-
-
-        } // end while
-
+        }
+        System.out.println(top);
     }
 }
