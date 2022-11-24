@@ -13,12 +13,14 @@ public class B1388 {
         int M = Integer.parseInt(st.nextToken());
         char[][] arr = new char[N][M];
         int cnt = 0;
+
         for (int i = 0; i < N; i++) {
             String str = br.readLine();
             for (int j = 0; j < M; j++) {
                 arr[i][j] = str.charAt(j);
             }
         }
+
         for (int i = 0; i < N; i++) {
             char now ='a';
             for (int j = 0; j < M; j++) {
