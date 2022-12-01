@@ -18,7 +18,7 @@ public class B1925 {
             arr[i][0] = Integer.parseInt(st.nextToken());
             arr[i][1] = Integer.parseInt(st.nextToken());
         }
-        //삼각형 넓이 구하기 신발끈 공식
+        //삼각형 넓이 구하기 신발끈 공식  0이면 일직선, 아니면 삼각형
         if(arr[0][0]*arr[1][1]+arr[1][0]*arr[2][1]+arr[2][0]*arr[0][1]-(arr[1][0]*arr[0][1]+arr[2][0]*arr[1][1]+arr[0][0]*arr[2][1])!=0){
         leg[0] =  Math.sqrt(Math.pow(arr[0][0]-arr[1][0],2)+ Math.pow(arr[0][1]-arr[1][1],2));
         leg[1]  =  Math.sqrt(Math.pow(arr[1][0]-arr[2][0],2)+ Math.pow(arr[1][1]-arr[2][1],2));
