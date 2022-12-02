@@ -33,6 +33,7 @@ public class B1969 {
                 }
             }
         }
+
         for (int i = 0; i < M; i++) {
             max = -1;
             int res = -1;
