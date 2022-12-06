@@ -18,15 +18,24 @@ public class B1920 {
             arrA[i] = Integer.parseInt(st.nextToken());
         }
         st = new StringTokenizer(br.readLine());
-        int res=0;
+        int res = 0;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
-            }
+        }
         Arrays.sort(arr);
         Arrays.sort(arrA);
 
+        for (int i = 0; i < arr.length; i++) {
+            int top = arr[N - 1], mid, bot = 0;
+
+            while (top >= bot) {
+                mid = (top + bot) / 2;
 
 
-        System.out.println(res);
+            }
+            System.out.println(res);
+
+        }
+
     }
 }
