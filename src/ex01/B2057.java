@@ -16,6 +16,7 @@ public class B2057 {
             if (num >= fac(i)) {
                 num -= fac(i);
 
+
             }
 
         }
