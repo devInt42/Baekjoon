@@ -1,29 +1,27 @@
 package ex01;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class B1292 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int A = sc.nextInt();
-        int B = sc.nextInt();
-        int[] arr = new int[B];
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int now=1;
         int cnt=0;
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
         int sum=0;
-        int tot=1;
-        while(tot<=B){
-
-            for(int i=1;i<=tot ;i++){
-                arr[cnt] = tot;
+        while(cnt<B){
+            for (int i = 0; i < now; i++) {
                 cnt++;
+                if(cnt>=A && cnt<=B){
+                    sum += now;
+                }
             }
-            tot++;
-        }
-
-
-        for(int i=A-1;i<B;i++){
-            sum += arr[i];
+            now++;
         }
         System.out.println(sum);
     }
