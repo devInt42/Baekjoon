@@ -26,3 +26,5 @@ public class B1292 {
         System.out.println(sum);
     }
 }
+
+
