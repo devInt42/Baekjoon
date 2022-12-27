@@ -12,29 +12,37 @@ public class B1920 {
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
         int M = Integer.parseInt(br.readLine());
-        int arrA[] = new int[N];
+        int first[] = new int[N];
         int arr[] = new int[M];
-        for (int i = 0; i < arrA.length; i++) {
-            arrA[i] = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < first.length; i++) {
+            first[i] = Integer.parseInt(st.nextToken());
         }
         st = new StringTokenizer(br.readLine());
         int res = 0;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(arr);
-        Arrays.sort(arrA);
+        Arrays.sort(first);
 
         for (int i = 0; i < arr.length; i++) {
-            int top = arr[N - 1], mid, bot = 0;
-
+            int top = first.length-1, mid, bot = 0;
+            boolean flag=false;
             while (top >= bot) {
                 mid = (top + bot) / 2;
 
-
+                if(first[mid]>arr[i]){
+                    top=mid-1;
+                } else if (first[mid]<arr[i]) {
+                    bot=mid+1;
+                } else {
+                    flag=true;
+                    System.out.println("1");
+                    break;
+                }
             }
-            System.out.println(res);
-
+            if(flag == false){
+                System.out.println("0");
+            }
         }
 
     }
